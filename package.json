@@ -1,0 +1,13 @@
+{
+  "name": "votechain-root",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "install:frontend": "npm --prefix frontend install",
+    "prebuild": "node scripts/vercel-prebuild.js",
+    "build": "npm --prefix frontend ci && npm --prefix frontend run build"
+  }
+}
