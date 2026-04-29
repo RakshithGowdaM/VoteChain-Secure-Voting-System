@@ -1,0 +1,113 @@
+.page { max-width: 700px; margin: 0 auto; padding: 40px 32px; }
+
+.tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; color: var(--accent2); text-transform: uppercase; margin-bottom: 10px; }
+.title { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+.desc { font-size: 14px; color: var(--text2); line-height: 1.7; margin-bottom: 28px; }
+
+.searchWrap { display: flex; gap: 10px; margin-bottom: 20px; }
+.searchInput {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 13px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.searchInput:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+.searchInput::placeholder { color: var(--text3); }
+.searchBtn {
+  padding: 14px 24px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.searchBtn:hover { background: #2563eb; }
+.searchBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.lastHashRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: -6px 0 20px;
+}
+
+.lastHashText {
+  font-size: 12px;
+  color: var(--text3);
+  font-family: var(--mono);
+}
+
+.lastHashBtn {
+  border: 0.5px solid var(--border2);
+  background: var(--surface);
+  color: var(--accent2);
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+  font-size: 12px;
+  font-family: var(--mono);
+  cursor: pointer;
+}
+
+.lastHashBtn:hover {
+  background: var(--surface2);
+}
+
+.error {
+  background: rgba(239,68,68,0.07);
+  border: 0.5px solid rgba(239,68,68,0.25);
+  color: #fca5a5;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.resultCard {
+  background: var(--surface);
+  border: 1px solid rgba(34,197,94,0.25);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 32px;
+  animation: fadeUp 0.3s ease;
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.resultHeader { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 0.5px solid var(--border); }
+.checkIcon { width: 44px; height: 44px; border-radius: 50%; background: rgba(34,197,94,0.1); border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.checkIcon svg { width: 22px; height: 22px; }
+.resultTitle { font-size: 16px; font-weight: 700; color: var(--green2); }
+.resultSub { font-size: 12px; color: var(--text3); margin-top: 3px; }
+
+.resultRows { display: flex; flex-direction: column; gap: 0; margin-bottom: 16px; }
+.resultRow { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+.resultRow:last-child { border-bottom: none; }
+.resultKey { font-size: 11px; font-family: var(--mono); color: var(--text3); letter-spacing: 0.08em; }
+.resultVal { font-size: 12px; font-family: var(--mono); font-weight: 600; color: var(--accent2); max-width: 55%; text-align: right; word-break: break-all; }
+
+.howWrap { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.howTitle { font-size: 13px; font-weight: 700; color: var(--text2); margin-bottom: 18px; }
+.howSteps { display: flex; flex-direction: column; gap: 14px; }
+.howStep { display: flex; gap: 14px; align-items: flex-start; }
+.howNum { width: 24px; height: 24px; border-radius: 50%; background: rgba(59,130,246,0.1); border: 0.5px solid var(--border2); display: flex; align-items: center; justify-content: center; font-size: 11px; font-family: var(--mono); font-weight: 700; color: var(--accent2); flex-shrink: 0; }
+.howText { font-size: 13px; color: var(--text2); line-height: 1.6; padding-top: 3px; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 16px; }
+  .searchWrap { flex-direction: column; }
+  .searchBtn { width: 100%; }
+  .lastHashRow { flex-direction: column; align-items: flex-start; }
+}

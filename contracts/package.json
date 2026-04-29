@@ -1,0 +1,19 @@
+{
+  "name": "votechain-contracts",
+  "version": "1.0.0",
+  "description": "VoteChain Smart Contracts",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy:local": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "deploy:mainnet": "npx hardhat run scripts/deploy.js --network mainnet",
+    "node": "npx hardhat node",
+    "verify": "npx hardhat verify --network sepolia"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.4",
+    "dotenv": "^16.3.1"
+  }
+}
