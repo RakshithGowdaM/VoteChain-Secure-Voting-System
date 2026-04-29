@@ -9,3 +9,11 @@ cache/
 artifacts/
 typechain-types/
 coverage/
+
+# Frontend build artifacts
+frontend/build/
+frontend/node_modules/
+
+# Backend
+backend/node_modules/
+backend/logs/
