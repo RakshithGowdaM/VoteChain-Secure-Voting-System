@@ -1,5 +1,6 @@
 'use strict';
 const router = require('express').Router();
+const mongoose = require('mongoose');
 const { requireAuth } = require('../middleware/auth');
 const Candidate = require('../models/Candidate');
 const Voter = require('../models/Voter');
@@ -11,7 +12,9 @@ router.post('/', requireAuth, async (req, res) => {
   const phone = req.user?.phone;
 
   if (!phone) return res.status(403).json({ message: 'Voter identity not found in token.' });
-  if (!candidateId) return res.status(400).json({ message: 'Candidate ID is required.' });
+  if (!candidateId || !mongoose.Types.ObjectId.isValid(candidateId)) {
+    return res.status(400).json({ message: 'A valid candidate ID is required.' });
+  }
 
   try {
     // Check election is open

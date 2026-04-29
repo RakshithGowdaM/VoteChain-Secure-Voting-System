@@ -37,7 +37,7 @@ export default function ResultsPage() {
       })
       .catch(() => setError('Unable to load results.'))
       .finally(() => setLoading(false));
-  }, [navigate]);
+  }, []);
 
   if (loading) return <Spinner />;
 

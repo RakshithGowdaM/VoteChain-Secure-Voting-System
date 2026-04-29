@@ -1,7 +1,6 @@
 'use strict';
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
 const { generateOtp, storeOtp, verifyOtp: checkOtp, sendOtp } = require('../utils/otp');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'change-me-in-production';
